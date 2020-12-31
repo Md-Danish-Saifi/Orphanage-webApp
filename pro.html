@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>progressbar</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<style>
+    body, html {
+        height: 100%;
+        margin: 0;
+    }
+
+    .bg {
+        /* The image used */
+        background-image: url("t.jpg");
+        /* Full height */
+        height: 100%;
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .txt{
+        position:relative;
+        text-align:left;
+        color:white;
+        padding-left:10px;
+        }
+</style></head>
+
+<body onload="move()">
+    <div class="bg">
+        <br /><br />
+        <br /><br />
+        <br /><br />
+
+        
+            <br />
+            <div class="w3-card w3-round-large txt" style="width:100%" >
+                <h1><br>Thank you for Signing Up <br /></h1>
+                <h4>You Are Being Loading</h4> <br><br>
+            </div>
+        
+        <center>
+            <div class="w3-container" style="align-content:center">
+                <br />
+                <div class="w3-light-grey w3-round" style="width:25%" align="left">
+                    <div id="myBar" class="w3-container w3-black w3-center w3-round" style="width:0%">0%</div>
+                </div>
+                <br>
+            </div>
+        </center>
+
+    </div>   
+
+    <script>
+        function move() {
+            var elem = document.getElementById("myBar");
+            var width = 0;
+            var id = setInterval(frame, 70);
+            function frame() {
+                if (width >= 100) {
+                    clearInterval(id);
+                }
+                else {
+                    width++;
+                    elem.style.width = width + '%';
+                    elem.innerHTML = width * 1 + '%';
+                }
+                if (width == 100) { location.replace("f2.html") }
+            }
+        }
+
+
+    </script>
+
+</body>
+</html> 
